@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark,.dark *));
+
+* {
+    font-family: "Outfit", sans-serif;
+}
+
+@theme {
+    --color-primary: #E6CCFF;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+
+.reset-tw :not(pre):not(code){
+    all:revert;
+}
+
+@keyframes bar-wave {
+  0%, 40%, 100% {
+    transform: scaleY(0.3);
+  }
+  20% {
+    transform: scaleY(1);
+  }
+}
+
+.loader-bar {
+  /* This is key: it makes the bar grow from the bottom up */
+  transform-origin: bottom;
+  animation: bar-wave 1.2s infinite ease-in-out;
+}
+
+/* Animation delays */
+.loader-bar:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loader-bar:nth-child(3) {
+  animation-delay: 0.4s;
+}
